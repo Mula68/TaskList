@@ -9,6 +9,10 @@ const clearBtn = document.querySelector('clear-tasks');
 
 const filter = document.querySelector('#filter');
 
+const tasksCard = document.querySelector('.card-action');
+
+console.log(tasksCard);
+
 // loading event listeners
 loadEventListeners();
 
@@ -18,13 +22,26 @@ function loadEventListeners(){
 
     form.addEventListener('submit', addTask);
 
-    li.addEventListener('click', deleteTask);
+    taskList.addEventListener('click', deleteTask);
+
+    tasksCard.addEventListener('click', clrTasks);
 
 }
 
+function clrTasks(){
+    // taskList.innerHTML = '';
+    while(taskList.firstChild){
+        taskList.firstChild.remove();
+    }
+}
+
 function deleteTask(e){
-    li = document.querySelector('.collection-item');
-    li.remove();
+    if(e.target.parentElement.classList.contains('delete-item')){
+        if(confirm('Are you sure?')){
+            e.target.parentElement.parentElement.remove();
+        }
+    }
+    
     e.preventDefault();
 }
 
