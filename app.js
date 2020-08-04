@@ -35,9 +35,8 @@ function loadEventListeners(){
 }
 
 function clrTasks(){
-    // taskList.innerHTML = '';
-    while(taskList.firstChild){
-        taskList.firstChild.remove();
+     taskList.innerHTML = '';
+    
     }
 }
 
