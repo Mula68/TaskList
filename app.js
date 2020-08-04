@@ -34,21 +34,6 @@ function loadEventListeners(){
 
 }
 
-function clrTasks(){
-     taskList.innerHTML = '';
-    
-    }
-}
-
-function deleteTask(e){
-    if(e.target.parentElement.classList.contains('delete-item')){
-        if(confirm('Are you sure?')){
-            e.target.parentElement.parentElement.remove();
-        }
-    }
-    
-    e.preventDefault();
-}
 
 function addTask(e){
     if(taskInput.value === ''){
@@ -83,6 +68,25 @@ function addTask(e){
  
     e.preventDefault();
 }
+
+
+function deleteTask(e){
+    if(e.target.parentElement.classList.contains('delete-item')){
+        if(confirm('Are you sure?')){
+            e.target.parentElement.parentElement.remove();
+        }
+    }
+    
+    e.preventDefault();
+}
+
+
+function clrTasks(){
+    taskList.innerHTML = '';
+   
+   }
+
+
 
 function taskFilter(e){
     const text = e.target.value.toLowerCase();
